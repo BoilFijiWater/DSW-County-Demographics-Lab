@@ -64,14 +64,15 @@ def state_with_most_counties(counties):
             states[cc] += 1
         else:
             states[cc] = 1
-    
-    states = sorted(states.items(), key=operator.states(1))
-    return states 
-        
-        
-    
-    
-    
+    most = 0
+    ca = ""
+    for state in states:
+        if most < states[state]:
+            most = states[state]
+            ca = state
+           
+    return ca + " " + str(most)
+
 def your_interesting_demographic_function(counties):
     """Compute and return an interesting fact using the demographic data about the counties in the US."""
 
