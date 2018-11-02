@@ -9,6 +9,7 @@ def main():
     print(percent_most_under_18(counties))
     print(most_under_18(counties))
     print(state_with_most_counties(counties))
+    print(your_interesting_demographic_function(counties))
 
 def alphabetically_first_county(counties):
     """Return the county with the name that comes first alphabetically."""
@@ -55,7 +56,6 @@ def state_with_most_counties(counties):
     #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state   
     #Find the state in the dictionary with the most counties 
     #Return the state with the most counties
-     
     states = {} 
     
     for c in counties:
@@ -75,6 +75,14 @@ def state_with_most_counties(counties):
 
 def your_interesting_demographic_function(counties):
     """Compute and return an interesting fact using the demographic data about the counties in the US."""
+    i = 0 
+    for sb in counties:
+        sav = sb["County"]    
+        if sav == "Santa Barbara County":
+            break
+        i += 1
+    return sav + " " + counties[i]["State"] + " " + str(counties[i]["Population"]["2014 Population"])
+    
 
 if __name__ == '__main__':
     main()
